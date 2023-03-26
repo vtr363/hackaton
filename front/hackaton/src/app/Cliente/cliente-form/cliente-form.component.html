@@ -1,0 +1,115 @@
+<!-- dentro da tag form é preciso chamar uma função
+ >> também é preciso declarar um grupo de formulários para o angular conseguir mapear os inputs
+    então disparar as validações
+    >> [formGroup]="clienteForm"
+ -->
+
+ <!-- (ngSubmit)="submit()" Envia dos dados para a validação, não envia caso estaja algo errado -->
+ <!-- #formDir="ngForm" dispara os inputs -->
+ <form (ngSubmit)="submit()" [formGroup]="clienteForm"  #formDir="ngForm" >
+
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input
+        type="text"
+        placeholder="Coloque um nome"
+        formControlName="nome"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="Nome.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="Nome.errors?.['required']"> O Nome é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="nomeResponsavel">Nome do Responsavel:</label>
+        <input
+        type="text"
+        placeholder="Coloque o Nome do Responsavel"
+        formControlName="nomeResponsavel"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="nomeResponsavel.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="nomeResponsavel.errors?.['required']"> O Nome do Responsavel é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="endereco">Endereco:</label>
+        <input
+        type="text"
+        placeholder="Coloque o Endereco"
+        formControlName="endereco"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="endereco.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="endereco.errors?.['required']"> O Endereco é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="cnpj">CNPJ:</label>
+        <input
+        type="text"
+        placeholder="Coloque o CNPJ"
+        formControlName="cnpj"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="cnpj.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="cnpj.errors?.['required']"> O CNPJ é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input
+        type="text"
+        placeholder="Coloque o telefone"
+        formControlName="telefone"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="telefone.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="telefone.errors?.['required']"> O telefone é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input
+        type="email"
+        placeholder="Coloque o email"
+        formControlName="email"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="email.errors?.['required']"> O E-mail é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="imageLogo">Coloque sua Logo:</label>
+        <input type="file" (change)="onFileSelected($event)">
+    </div>
+
+    <div class="form-group">
+        <label for="imageDeFundo">Coloque sua Imagem de Fundo:</label>
+        <input type="file" (change)="onFileSelected($event)">
+    </div>
+
+    <input type="submit" value="{{ btnText }}">
+    
+
+</form>
+

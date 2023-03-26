@@ -1,0 +1,48 @@
+<!-- dentro da tag form é preciso chamar uma função
+ >> também é preciso declarar um grupo de formulários para o angular conseguir mapear os inputs
+    então disparar as validações
+    >> [formGroup]="momentForm"
+ -->
+
+ <!-- (ngSubmit)="submit()" Envia dos dados para a validação, não envia caso estaja algo errado -->
+ <!-- #formDir="ngForm" dispara os inputs -->
+ <form (ngSubmit)="submit()" [formGroup]="loginForm"  #formDir="ngForm" >
+
+
+    <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input
+        type="email"
+        placeholder="Coloque o email"
+        formControlName="email"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="email.errors?.['required']"> O E-mail é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input
+        type="password"
+        placeholder="Coloque sua Senha"
+        formControlName="senha"
+        required />
+
+         <!-- na prixima div a condição é quando o title for valido e o formDir for desparado na div anterior  -->
+         <div *ngIf="senha.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="senha.errors?.['required']"> O Nome é obrigatorio.</p>
+        </div>
+        
+    </div>
+
+
+    <input type="submit" value="Login">
+    <br><br><br>
+    <a routerLink="registro"><h2>Registrar</h2></a>
+    
+
+</form>
