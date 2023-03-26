@@ -9,7 +9,7 @@ namespace comercioLocalAPI.Model
     {
         public int produtoId { get; set; }
         public string? nomeProduto { get; set; }
-        public double valorUnitario { get; set; }
+        public decimal valorUnitario { get; set; }
         public int quantidadeProduto { get; set; }
         public string? descricaoProduto { get; set; }
         

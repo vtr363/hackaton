@@ -11,7 +11,7 @@ namespace comercioLocalAPI
 
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }
-        public DbSet<Negociacao> Negociacoe { get; set; }
+        public DbSet<Negociacao> Negociacao { get; set; }
         public DbSet<Produto> Produto { get; set; }
 
 

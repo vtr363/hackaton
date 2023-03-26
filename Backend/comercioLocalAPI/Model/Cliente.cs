@@ -14,7 +14,7 @@ namespace comercioLocalAPI.Model
         public string? cpf { get; set; }
         public string? cnpj { get; set; }
         public string? telefone { get; set; }
-        public List<string> email { get; } = new();
+        public string? email { get; set; }
         public List<Negociacao> negociacoes { get; } = new();
 
     }

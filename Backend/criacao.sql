@@ -11,7 +11,10 @@ create table produto (produtoId INT PRIMARY key ,
                       valorUnitario NUMERIC,
                       quantidadeProduto INT,
                       descricaoProduto VARCHAR(100),
-
+                      fornecedorId INT,
+                      negociacaoId Int,
+                      foreign key(fornecedorId) REFERENCES fornecedor(fornecedorId),
+                      foreign key(negociacaoId) REFERENCES negociacao(negociacaoId),
                       );
 
 create table fornecedor (fornecedorId INT NOT NULL primary key,

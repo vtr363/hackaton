@@ -1,5 +1,6 @@
 import { Component ,EventEmitter,Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup,Validators } from '@angular/forms';
+import { RegistroService } from 'src/app/pages/registro.service';
 import { Fornecedor } from '../../Fornecedor';
 
 
@@ -18,8 +19,8 @@ export class FornecedorFormComponent {
 
   ngOnInit():void{
     this.fornecedorForm = new FormGroup({
-      id: new FormControl(''),
-      nome:new FormControl('',[Validators.required]),
+      fornecedorId: new FormControl(''),
+      nomeEmpresa:new FormControl('',[Validators.required]),
       nomeResponsavel:new FormControl('',[Validators.required]),
       endereco:new FormControl('',[Validators.required]),
       cnpj:new FormControl('',[Validators.required]),
@@ -32,7 +33,7 @@ export class FornecedorFormComponent {
   }
 
   get Nome(){
-    return this.fornecedorForm.get('nome')!;
+    return this.fornecedorForm.get('nomeEmpresa')!;
   }
 
   get nomeResponsavel(){
@@ -40,7 +41,7 @@ export class FornecedorFormComponent {
   }
 
   get endereco(){
-    return this.fornecedorForm.get('endereco')!;
+    return this.fornecedorForm.get('endereço')!;
   }
 
   get cnpj(){
@@ -65,6 +66,13 @@ export class FornecedorFormComponent {
 
   }
 
+  constructor( private registroService: RegistroService){
+
+  }
+
+
+
+
   submit(){
     if(this.fornecedorForm.invalid){
       return;
@@ -72,11 +80,14 @@ export class FornecedorFormComponent {
     console.log(this.fornecedorForm.value)
 
     this.onSubmit.emit(this.fornecedorForm.value);
+    this.registroService.addFornecedor(this.fornecedorForm.value)
   }
 
-  
 
- 
+
+
+
+
 
 }
 

@@ -8,7 +8,7 @@ namespace comercioLocalAPI.Model
     public class Negociacao
     {
         public int negociacaoId { get; set; }
-        public int status { get; set; }
+        public string status { get; set; }
         public DateTime dataNegociacao { get; set; }
         public List<Produto> produtos { get;} = new();
         

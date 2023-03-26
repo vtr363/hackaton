@@ -47,14 +47,14 @@ GO
 
 INSERT INTO produto
 ( -- columns to insert data into
- [produtoId], [nomeProduto], [valorUnitario], [quantidadeProduto], [descricaoProduto]
+ [produtoId], [nomeProduto], [valorUnitario], [quantidadeProduto], [descricaoProduto], [fornecedorId], [negociacaoId]
 )
 VALUES
 (
- 1, 'Tomate', 15 , 300, 'Valor do Kilo'),
+ 1, 'Tomate', 15 , 300, 'Valor do Kilo', 1, 3),
 
-(2, 'Pão', 1 , 300, 'O melhor e maior do mundo'),
+(2, 'Pão', 1 , 300, 'O melhor e maior do mundo', 2, 2),
 
-(3, 'Yogurte', 6 , 20, 'Unidade de 2L')
+(3, 'Yogurte', 6 , 20, 'Unidade de 2L', 3, 1)
 
 GO

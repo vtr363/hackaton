@@ -1,0 +1,42 @@
+.container-card{
+  background-color:darkgray;
+  width: 420px;
+  height: auto;
+  padding: 16px;
+  border-radius: 16px;
+
+}
+.centralizarCard{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+.container-card img{
+
+  width: 120px;
+  height: 120px;
+  margin-right: 16px;
+
+  border-radius: 100%;
+}
+
+p{
+  text-align: initial;
+font-size: 12PX;
+}
+
+h3{
+  margin-left: 16px;
+}
+
+@media (max-width:900px){
+
+.fotoPerfil{width: 50%;}
+p{
+  text-align: initial;
+   font-size: 12px;
+}
+ }
